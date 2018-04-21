@@ -14,5 +14,10 @@ using namespace std;
 			{'c','l','i','c','k','q','n','e','k','p'},
 			{'s','z','m','t','e','q','j','s','r','b'},
 			{'b','b','q','p','w','h','f','b','m','k'}};
-string
   }
+int main(){
+for(i=0; i<10; i++){
+    for (j=0; j<10; j++)
+        cout<<table[i][j]<<' ';
+    cout<<endl;
+    }
