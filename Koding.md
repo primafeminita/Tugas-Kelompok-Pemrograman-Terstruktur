@@ -14,10 +14,16 @@ using namespace std;
 			{'c','l','i','c','k','q','n','e','k','p'},
 			{'s','z','m','t','e','q','j','s','r','b'},
 			{'b','b','q','p','w','h','f','b','m','k'}};
-  }
+ 
+ void revStr(string &str){
+	int n=str.lenght();
+	for(i=0;1<n/2;i++)
+		swap(str[i], str[n-i-1]);
+} 
+  
 int main(){
-for(i=0; i<10; i++){
-    for (j=0; j<10; j++)
-        cout<<table[i][j]<<' ';
-    cout<<endl;
-    }
+	for(i=0; i<10; i++){
+    		for (j=0; j<10; j++)
+        	cout<<table[i][j]<<' ';
+    		cout<<endl;
+ 	}
