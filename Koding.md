@@ -2,7 +2,7 @@
 
 #include <iostream>
 using namespace std;
-    string cari, tmp;
+    string words, tem;
     bool cek;
     char huruf[10][10]{ {'p','e','a','c','d','v','q','w','f','g'},
 		 	{'o','c','b','n','j','m','l','o','c','k'},
@@ -15,15 +15,34 @@ using namespace std;
 			{'s','z','m','t','e','q','j','s','r','b'},
 			{'b','b','q','p','w','h','f','b','m','k'}};
  
- void revStr(string &str){
+ 
+ 
+ void reverse(string &str){
 	int n=str.lenght();
-	for(i=0;1<n/2;i++)
+	for(i=0;i<n/2;i++)
 		swap(str[i], str[n-i-1]);
 } 
+
+bool check(string &tem,string &words){
+size_t found=tem.find(words);
+        if(found!=string::npos){
+            return true;
+        }
+        else {
+            reverse(tem);
+            found = tem.find(words);
+            if (found!=string::npos){
+                return true;
+            }
+            else{
+                return false;
+	    {
+        }
+}
   
 int main(){
 	for(i=0; i<10; i++){
     		for (j=0; j<10; j++)
-        	cout<<table[i][j]<<' ';
+        	cout<<huruf[i][j]<<' ';
     		cout<<endl;
- 	}
+ }
