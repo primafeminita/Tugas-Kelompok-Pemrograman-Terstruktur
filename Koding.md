@@ -41,6 +41,19 @@ size_t found=tem.find(words);
 	    {
         }
 }
+bool horizontal(string &words){
+
+for(i=0; i<10; i++){
+    tem.clear();
+    for (j=0; j<10; j++){
+        tem=tem+ huruf[i][j];
+        }
+        cek=check(tem,words);
+        if (cek)
+            return cek;
+    }
+
+return cek;
   
 int main(){
 	for(i=0; i<10; i++){
