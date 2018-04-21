@@ -1,6 +1,8 @@
 # Tugas-Kelompok-Pemrograman-Terstruktur
 
 #include <iostream>
+#include <string.h>
+#include <bits/stdc++.h>
 using namespace std;
     string words, tem;
     bool cek;
