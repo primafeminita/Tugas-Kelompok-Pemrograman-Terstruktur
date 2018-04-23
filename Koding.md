@@ -102,7 +102,19 @@ bool diagonalkiri(string &words){
      }
 return false;
 }
-  
+ bool vertical(string &words){
+
+for(i=0; i<10; i++){
+    tem.clear();
+    for (j=0; j<10; j++){
+        tem=tem+huruf[j][i];
+        }
+        cek=check(tem,words);
+		if(cek)
+            return cek;
+    }
+return cek;
+} 
 int main(){
 	for(i=0; i<10; i++){
     		for (j=0; j<10; j++)
