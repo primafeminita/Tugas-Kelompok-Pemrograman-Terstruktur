@@ -1,11 +1,18 @@
+
+/*
 # Tugas-Kelompok-Pemrograman-Terstruktur
+NAMA KELOMPOK :
+PRIMA FEMINITA - 1717051059
+REDA MEININGTIYAS - 1717051055
+*/
 
 #include <iostream>
 #include <string.h>
-#include <bits/stdc++.h>
+#include <cstdlib>
 using namespace std;
     string words, tem;
     bool cek;
+    int i,j;
     char huruf[10][10]{ {'p','e','g','n','i','r','t','s','i','g'},
 		 	{'o','l','b','l','l','m','l','o','s','k'},
                         {'i','k','a','s','o','o','j','k','g','q'},
@@ -17,14 +24,11 @@ using namespace std;
 			{'t','o','o','b','i','m','n','c','a','a'},
 			{'b','b','q','a','o','u','t','p','u','t'}};
  
- }
- 
- void reverse(string &string){
-	int n=string.lenght();
-	for(i=0;i<n/2;i++)
-		swap(string[i], string[n-i-1]);
-} 
-
+void reverse(string &string){
+    int n = string.length();
+    for (int i=0; i<n/2; i++)
+    	swap(string[i], string[n-i-1]);
+}
 bool check(string &tem,string &words){
 size_t found=tem.find(words);
         if(found!=string::npos){
@@ -38,8 +42,8 @@ size_t found=tem.find(words);
             }
             else{
                 return false;
-	    {
-        }
+            }
+	}
 }
 bool horizontal(string &words){
 
@@ -72,7 +76,7 @@ bool diagonalkanan(string &words){
         for(j=0;j<i;j++){
             tem=tem+huruf[j+x][j];
         }
-        c=check(tem,words);
+        cek=check(tem,words);
 	if(cek)
         return cek; x++;
     }
@@ -91,12 +95,12 @@ bool diagonalkiri(string &words){
         return cek;
     }
      for(i=1;i<=9;i++){
-     int x=3;
+     int x=9;
 	 tem.clear();
-	 for(j=i;j<=3;j++){
+	 for(j=i;j<=9;j++){
 	    tem=tem+huruf[j][x]; x--;
 	}
-	c=check(tem,words);
+	cek=check(tem,words);
 	if(cek)
         return cek;
      }
@@ -116,25 +120,34 @@ for(i=0; i<10; i++){
 return cek;
 } 
 int main(){
-	for(i=0; i<10; i++){
-    		for (j=0; j<10; j++)
-        	cout<<huruf[i][j]<<' ';
-    		cout<<endl;
+   for(i=0; i<10; i++){
+    	for (j=0; j<10; j++)
+       	cout<<huruf[i][j]<<' ';
+  	cout<<endl;
  }
-cin>>words;
+ 
+  cout<<"\n\nTulis Kata Yang Ingin Anda Cari"<<endl<<endl;
+  cari:
+  cin>>words;
 	if (horizontal(words)){
 	    cout <<"Ada (Horizontal)"<<endl<<endl;
+	    goto cari;
 	    }
 	else if (vertical(words)){
 	    cout <<"Ada (Vertikal)"<<endl<<endl;
+	    goto cari;
 	    }
 	else if (diagonalkanan(words)){
 	    cout <<"Ada (Diagonal)"<<endl<<endl;
+	    goto cari;
 	    }
 	else if (diagonalkiri(words)){
 		cout<<"Ada (Diagonal)"<<endl<<endl;
+		goto cari;
 		}
 	else
 	    cout <<"Kata yang ada cari tidak ada"<<endl<<endl;
+	    goto cari;
 return 0;
 }
+
