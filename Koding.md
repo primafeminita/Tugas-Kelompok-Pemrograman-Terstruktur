@@ -6,23 +6,23 @@
 using namespace std;
     string words, tem;
     bool cek;
-    char huruf[10][10]{ {'p','e','s','t','r','i','n','g','f','g'},
-		 	{'o','c','b','n','j','m','l','o','u','k'},
-                        {'i','k','o','s','o','y','j','k','n','q'},
-			{'n','d','a','t','o','l','r','e','g','l'},
-	 	        {'t','g','t','n','s','v','b','m','s','o'},
-	   		{'e','e','o','c','n','t','l','k','i','b'},
-			{'r','t','i','e','n','j','r','b','o','j'},
-			{'c','l','a','s','s','k','q','c','e','e'},
-			{'r','e','f','e','r','e','n','c','a','c'},
-			{'b','b','q','a','r','r','a','y','m','t'}};
+    char huruf[10][10]{ {'p','e','g','n','i','r','t','s','i','g'},
+		 	{'o','l','b','l','l','m','l','o','s','k'},
+                        {'i','k','a','s','o','o','j','k','g','q'},
+			{'n','o','a','c','o','l','c','e','n','l'},
+	 	        {'t','g','t','t','e','y','n','k','u','s'},
+	   		{'e','u','o','c','n','i','a','k','f','t'},
+			{'r','t','p','e','l','e','r','r','o','r'},
+			{'c','l','a','n','r','o','o','t','r','c'},
+			{'t','o','o','b','i','m','n','c','a','a'},
+			{'b','b','q','a','o','u','t','p','u','t'}};
  
+ }
  
- 
- void reverse(string &str){
-	int n=str.lenght();
+ void reverse(string &string){
+	int n=string.lenght();
 	for(i=0;i<n/2;i++)
-		swap(str[i], str[n-i-1]);
+		swap(string[i], string[n-i-1]);
 } 
 
 bool check(string &tem,string &words){
@@ -54,6 +54,54 @@ for(i=0; i<10; i++){
     }
 
 return cek;
+}
+
+bool diagonalkanan(string &words){
+    int x=-9;
+    for(i=9;i>=0;i--){
+        tem.clear();
+        for(j=i;j<=9;j++){
+            tem=tem+huruf[j+x][j];
+        }
+        cek=check(tem,words);
+	if(cek)
+        return cek; x++;
+    } 
+    for(i=9;i>=0;i--){
+        tem.clear();
+        for(j=0;j<i;j++){
+            tem=tem+huruf[j+x][j];
+        }
+        c=check(tem,words);
+	if(cek)
+        return cek; x++;
+    }
+return false;
+}
+
+bool diagonalkiri(string &words){
+    for(i=0;i<=9;i++){
+    int x=i;
+     	tem.clear();
+        for(j=0;j<=i;j++){
+            tem=tem+huruf[j][x]; x--;
+        }
+        cek=check(tem,words);
+	if(cek)
+        return cek;
+    }
+     for(i=1;i<=9;i++){
+     int x=3;
+	 tem.clear();
+	 for(j=i;j<=3;j++){
+	    tem=tem+huruf[j][x]; x--;
+	}
+	c=check(tem,words);
+	if(cek)
+        return cek;
+     }
+return false;
+}
   
 int main(){
 	for(i=0; i<10; i++){
