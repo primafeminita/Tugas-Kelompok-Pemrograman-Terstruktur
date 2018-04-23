@@ -121,3 +121,20 @@ int main(){
         	cout<<huruf[i][j]<<' ';
     		cout<<endl;
  }
+cin>>words;
+	if (horizontal(words)){
+	    cout <<"Ada (Horizontal)"<<endl<<endl;
+	    }
+	else if (vertical(words)){
+	    cout <<"Ada (Vertikal)"<<endl<<endl;
+	    }
+	else if (diagonalkanan(words)){
+	    cout <<"Ada (Diagonal)"<<endl<<endl;
+	    }
+	else if (diagonalkiri(words)){
+		cout<<"Ada (Diagonal)"<<endl<<endl;
+		}
+	else
+	    cout <<"Kata yang ada cari tidak ada"<<endl<<endl;
+return 0;
+}
